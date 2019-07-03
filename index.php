@@ -1,9 +1,8 @@
 <?php
-//ini_set('display_errors', 1);
-//require_once 'application/bootstrap.php';
 require 'application/lib/dev.php';
 
 use application\core\Router;
+//use application\controllers\Controller_account;
 //use application\core\Route;
 
 //функция для подключения класса
