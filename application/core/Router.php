@@ -68,7 +68,7 @@ class Router {
             Router::ErrorPage404();
         }
         // создаем контроллер
-        $controller = new $controller_class_path(array("controller"=>$routes[1], "action"=>$action_name));
+        $controller = new $controller_class_path(array("controller"=>strtolower(substr($controller_name, 0, -10)), "action"=>substr($action_name, 0, -6)));
         $action = $action_name;
 
         if(method_exists($controller, $action))
