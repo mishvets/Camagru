@@ -3,6 +3,7 @@
 namespace application\core; //пространство имен в папке в которой лежит
 
 //use application\controllers\AccountController;
+use application\core\View;
 class Router {
 
     protected $routes = [];
@@ -65,7 +66,8 @@ class Router {
             правильно было бы кинуть здесь исключение,
             но для упрощения сразу сделаем редирект на страницу 404
             */
-            Router::ErrorPage404();
+//            Router::ErrorPage404();
+            View::errorCode(404);
         }
         // создаем контроллер
         $controller = new $controller_class_path(array("controller"=>strtolower(substr($controller_name, 0, -10)), "action"=>substr($action_name, 0, -6)));
@@ -79,16 +81,17 @@ class Router {
         else
         {
             // здесь также разумнее было бы кинуть исключение
-            Router::ErrorPage404();
+//            Router::ErrorPage404();
+            View::errorCode(404);
         }
     }
 
-    public function ErrorPage404()
-    {
-        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
-        header('HTTP/1.1 404 Not Found');
-        header("Status: 404 Not Found");
-//        header('Location:'.$host.'404');
-    }
+//    public function ErrorPage404()
+//    {
+//        $host = 'http://'.$_SERVER['HTTP_HOST'].'/';
+//        header('HTTP/1.1 404 Not Found');
+//        header("Status: 404 Not Found");
+////        header('Location:'.$host.'404');
+//    }
 }
 ?>
