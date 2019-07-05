@@ -60,6 +60,7 @@ class Router {
         $controller_file = $controller_name.'.php';
         $controller_path = "application/controllers/".$controller_file;
         $controller_class_path = str_replace('/', '\\', substr($controller_path, 0, -4));
+//        debug($controller_class_path);
         if(!file_exists($controller_path))
         {
             /*

@@ -3,12 +3,16 @@
 namespace application\controllers;
 
 use application\core\Controller;
-use application\lib\Database;
 
 class MainController extends Controller {
 
     public function indexAction() {
-        $this->view->render('Main Page');
+        $result = $this->model->getPhotos();
+        //можно передавать данные в функцию рендера и потом через extract($$)
+        $vars = [
+            'photos' => $result,
+        ];
+        $this->view->render('Main Page', $vars);
 //        $db = new Database();
 //
 //        $params = [

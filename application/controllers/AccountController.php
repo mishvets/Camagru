@@ -13,7 +13,6 @@ class AccountController extends Controller {
 
     public function registerAction() {
         $this->view->render('Register page');
-//        var_dump($this->routes);
     }
 }
 ?>

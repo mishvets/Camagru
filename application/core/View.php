@@ -14,7 +14,7 @@ class View {
     }
 
     public function render($title, $vars = []) { //$vars не обязательная переменная за счет того, что инициализирована как пустой массив
-//        extract($vars);//позволит разложить массив на переменные
+        extract($vars);//позволит разложить массив на переменные
         //буферезированное считывание
         if(file_exists('application/views/'.$this->path.'.php')){
             ob_start();
@@ -23,7 +23,8 @@ class View {
             require 'application/views/layouts/'.$this->layout.'.php';
         }
         else {
-            echo 'View not found: '. $this->path;
+            self::errorCode(404);
+//            echo 'View not found: '. $this->path;
         }
     }
 
