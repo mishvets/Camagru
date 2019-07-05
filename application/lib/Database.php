@@ -14,21 +14,30 @@ class Database {
         $this->db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD, $DB_OPTIONS);
     }
 
-    public function query($sql) {
-        $query = $this->db->query($sql);
-        $result = $query->fetchColumn();
-        debug($result);
+    public function query($sql, $params = []) {
+        $stmt = $this->db->prepare($sql);
+        if (!empty($params)) {
+            //Защита от SQL иньекции. Теперь нельзя будет просто в поле поиск по id вписать и выполнить “2; DELETE FROM users”
+            foreach ($params as $key => $val) {
+                $stmt->bindValue(':'.$key, $val);
+            }
+        }
+        $stmt->execute();
+        return $stmt;
+//        $query = $this->db->query($sql);
+//        $result = $query->fetchColumn();
+//        debug($result);
+//        return $query;
     }
 
-    ошибки!!!
-    public row($sql) {
-        $result = $this->query($sql);
-        return $result->fetchAll();
+    public function row($sql, $params = []) {
+        $result = $this->query($sql, $params);
+        return $result->fetchAll(PDO::FETCH_ASSOC);
     }
 
-public row($sql) {
-$result = $this->query($sql);
-return $result->fetchAll();
-}
+    public function column($sql, $params = []) {
+        $result = $this->query($sql, $params);
+        return $result->fetchColumn();
+    }
 
 }

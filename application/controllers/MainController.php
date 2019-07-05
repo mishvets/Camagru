@@ -8,10 +8,16 @@ use application\lib\Database;
 class MainController extends Controller {
 
     public function indexAction() {
-        $db = new Database();
-        $db->query('SELECT name FROM users WHERE id = 1');
-
         $this->view->render('Main Page');
+//        $db = new Database();
+//
+//        $params = [
+//            'id' => 2,
+//        ];
+//
+//        $data = $db->column('SELECT name FROM users WHERE id = :id', $params);
+//        debug($data);
+
 
         //можно передавать данные в функцию рендера и потом через extract($$)
 //        $vars = [
