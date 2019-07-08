@@ -1,10 +1,16 @@
 <h1>REGISTER</h1>
-<form>
-    <p>Login</p>
-    <p><input type="text"></p>
-    <input type="text" placeholder="surname" name="surnm"/>
-    <input type="text" placeholder="phone" name="tel"/>
-    <input type="text" placeholder="email" name="email">
-    <input type="password" placeholder="password" name="passwd"/>
-    <button type="submit" name="submit" value="OK">REGISTER</button>
+<form action = "/account/register" method="post">
+    <div>
+        <label>Login </label>
+        <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
+    </div>
+    <div>
+        <label>E-mail </label>
+        <input type="text" placeholder="email" name="email" value="<?php if ($_POST) {echo $_POST['email'];}?>"/>
+    </div>
+    <div>
+        <label>Password </label>
+        <input type="password" placeholder="password" name="password"/>
+    </div>
+    <button type="submit">REGISTER</button>
 </form>

@@ -40,5 +40,9 @@ class View {
         header('Location: '.$url);
         exit;
     }
+
+    public function message($text) {
+        echo "<script type='text/javascript'>alert('$text');</script>";
+    }
 }
 ?>

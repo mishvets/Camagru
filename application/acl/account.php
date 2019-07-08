@@ -3,9 +3,11 @@
     return [
         'all' => [
             'login',
+            'register',
+            'recovery',
         ],
         'authorize' => [
-            'register',
+            //,
         ],
         'guest' => [
             //
