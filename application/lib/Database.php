@@ -19,7 +19,13 @@ class Database {
         if (!empty($params)) {
             //Защита от SQL иньекции. Теперь нельзя будет просто в поле поиск по id вписать и выполнить “2; DELETE FROM users”
             foreach ($params as $key => $val) {
-                $stmt->bindValue(':'.$key, $val);
+                if (is_int($val)) {
+                    $type = PDO::PARAM_INT;
+                }
+                else {
+                    $type = PDO::PARAM_STR;
+                }
+                $stmt->bindValue(':'.$key, $val, $type);
             }
         }
         $stmt->execute();
@@ -38,6 +44,10 @@ class Database {
     public function column($sql, $params = []) {
         $result = $this->query($sql, $params);
         return $result->fetchColumn();
+    }
+
+    public function lastInsertId() {
+        return $this->db->lastInsertId();
     }
 
 }
