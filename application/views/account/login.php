@@ -1,10 +1,13 @@
-<h1>ENTER</h1>
+<h1>LOG IN</h1>
 <form>
-    <p>Login <input type="text"></p>
-    <p><input type="text" placeholder="surname" name="surnm"/></p>
-    <input type="text" placeholder="phone" name="tel"/>
-    <input type="text" placeholder="email" name="email">
-    <input type="password" placeholder="password" name="passwd"/>
+    <div>
+        <label>Login </label>
+        <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
+    </div>
+    <div>
+        <label>Password </label>
+        <input type="password" placeholder="password" name="password"/>
+    </div>
     <p><button type="submit" name="submit" value="OK">REGISTER</button>
 </p>
 </form>

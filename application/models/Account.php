@@ -46,7 +46,16 @@ class Account extends Model {
             $this->error = 'The password must be more than 6 characters and contain at least one upper case letter, one lower case letter and one number.';
             return false;
         }
-        debug($post);
+        else if (strcmp($post['password'], $post['password_c'])){
+            $this->error = 'Passwords are not the same.';
+            return false;
+        }
+//        debug(mail('shmisha@i.ua', 'Sub', 'lol'));
+//        if (!mail('shmisha@i.ua', 'Sub', 'lol')) {
+//            $this->error = 'not send';
+//            return false;
+//        }
+//        debug($post);
         return true;
     }
 }

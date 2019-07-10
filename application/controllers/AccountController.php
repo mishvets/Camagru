@@ -12,16 +12,16 @@ class AccountController extends Controller {
     }
 
     public function registerAction() {
+        $this->view->render('Register page');
         if (!empty($_POST)) {
 //            debug($_POST);
-            if (!$this->model->validate(['login', 'email', 'password'], $_POST)) {
+            if (!$this->model->validate(['login', 'email', 'password', 'password_c'], $_POST)) {
                 $this->view->message($this->model->error);
             }
-            else {
+        else {
                 $this->view->message("Success");
             }
         }
-        $this->view->render('Register page');
     }
 
     public function recoveryAction() {

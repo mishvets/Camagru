@@ -1,4 +1,4 @@
-<h1>REGISTER</h1>
+<h1>SIGN UP</h1>
 <form action = "/account/register" method="post">
     <div>
         <label>Login </label>
@@ -12,5 +12,9 @@
         <label>Password </label>
         <input type="password" placeholder="password" name="password"/>
     </div>
-    <button type="submit">REGISTER</button>
+    <div>
+        <label>Password Confirmation</label>
+        <input type="password" placeholder="password" name="password_c"/>
+    </div>
+    <p><button type="submit">Sign Up</button></p>
 </form>
