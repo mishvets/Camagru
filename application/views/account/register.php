@@ -14,8 +14,8 @@
     </div>
     <div>
         <label>Password Confirmation</label>
-        <input type="password" placeholder="password" name="password_c"/>
+        <input type="password" placeholder="password confirm" name="password_c"/>
     </div>
     <p><button type="submit">Sign Up</button></p>
-    <button onclick = "post_query('test', 'login', 'login.email.password.password_c')">Sign Up</button>
+<!--    <button onclick = "post_query('test', 'login', 'login.email.password.password_c')">Sign Up</button>-->
 <!--</form>-->

@@ -25,7 +25,6 @@ class Database {
         if (!empty($params)) {
             //Защита от SQL иньекции. Теперь нельзя будет просто в поле поиск по id вписать и выполнить “2; DELETE FROM users”
             foreach ($params as $key => $val) {
-                echo '<p>'.$key.'=>'.$val.'</p>';
                 if (is_int($val)) {
                     $type = PDO::PARAM_INT;
                 }

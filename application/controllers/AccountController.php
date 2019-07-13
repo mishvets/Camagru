@@ -18,7 +18,7 @@ class AccountController extends Controller {
                 $this->view->message($this->model->error);
             }
             else {
-                $res = $this->model->getUsers($this->model->data['email']);
+                $res = $this->model->getUsers('email', $this->model->data['email']);
                 if (empty($res)) {
                     mail($this->model->data['email'], 'Registration Camagru', 'cool');
                     $this->view->message("Success. Check your mailbox");

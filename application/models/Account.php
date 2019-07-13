@@ -45,8 +45,9 @@ class Account extends Model {
         return $data;
     }
 
-    public function getUsers($email) {
-        $result = $this->db->row('SELECT id FROM users WHERE email = :email', ['email' => $email]);
+    public function getUsers($field, $val) {
+//        debug('SELECT id FROM users WHERE '.$field.' = :val');
+        $result = $this->db->row('SELECT id FROM users WHERE '.$field.' = :val', ['val' => $val]);
         return $result;
     }
 }
