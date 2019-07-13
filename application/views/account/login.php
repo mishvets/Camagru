@@ -1,3 +1,5 @@
+<script src="../script.js"></script>
+
 <h1>LOG IN</h1>
 <form>
     <div>
@@ -8,6 +10,8 @@
         <label>Password </label>
         <input type="password" placeholder="password" name="password"/>
     </div>
-    <p><button type="submit" name="submit" value="OK">REGISTER</button>
-</p>
+    <p>
+    <button onclick = "post_query()">REGISTER</button>
+    <button type="submit" name="submit" value="OK">REGISTER</button>
+    </p>
 </form>

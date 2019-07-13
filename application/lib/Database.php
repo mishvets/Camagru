@@ -10,15 +10,22 @@ class Database {
 
     public function __construct() {
         $config = require 'config/database.php';
-//        debug($DB_DSN);
-        $this->db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD, $DB_OPTIONS);
+        try {
+            $this->db = new PDO($DB_DSN, $DB_USER, $DB_PASSWORD, $DB_OPTIONS);
+        }
+        catch (\PDOException $e) {
+            echo 'Connection fail: ' . $e->getMessage();
+        }
     }
 
+
+    //
     public function query($sql, $params = []) {
         $stmt = $this->db->prepare($sql);
         if (!empty($params)) {
             //Защита от SQL иньекции. Теперь нельзя будет просто в поле поиск по id вписать и выполнить “2; DELETE FROM users”
             foreach ($params as $key => $val) {
+                echo '<p>'.$key.'=>'.$val.'</p>';
                 if (is_int($val)) {
                     $type = PDO::PARAM_INT;
                 }

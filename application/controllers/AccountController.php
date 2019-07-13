@@ -14,12 +14,19 @@ class AccountController extends Controller {
     public function registerAction() {
         $this->view->render('Register page');
         if (!empty($_POST)) {
-//          $this->data = $this->model->test_input($_POST);
             if (!$this->model->validate(['login', 'email', 'password', 'password_c'], $_POST)) {
                 $this->view->message($this->model->error);
             }
-        else {
-                $this->view->message("Success");
+            else {
+                $res = $this->model->getUsers($this->model->data['email']);
+                if (empty($res)) {
+                    mail($this->model->data['email'], 'Registration Camagru', 'cool');
+                    $this->view->message("Success. Check your mailbox");
+
+                }
+                else {
+                    $this->view->message("This email have been already used.");
+                }
             }
         }
     }

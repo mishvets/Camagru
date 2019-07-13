@@ -17,9 +17,10 @@ class MainController extends Controller {
 //
 //        $params = [
 //            'id' => 2,
+//             'name' => 'Ivan',
 //        ];
 //
-//        $data = $db->column('SELECT name FROM users WHERE id = :id', $params);
+//        $data = $db->column('SELECT name FROM users WHERE id = :id AND name = :name', $params);
 //        debug($data);
 
 
