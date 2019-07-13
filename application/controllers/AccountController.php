@@ -14,7 +14,7 @@ class AccountController extends Controller {
     public function registerAction() {
         $this->view->render('Register page');
         if (!empty($_POST)) {
-//            debug($_POST);
+//          $this->data = $this->model->test_input($_POST);
             if (!$this->model->validate(['login', 'email', 'password', 'password_c'], $_POST)) {
                 $this->view->message($this->model->error);
             }

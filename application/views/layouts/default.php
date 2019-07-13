@@ -8,21 +8,17 @@
     <title> <?php echo $title ?></title>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="active">Home</a>
-            <a href="#">Link</a>
-            <a href="#">Link</a>
-            <a href="#" class="right">Link</a>
-        </nav>
-        <div class="navbar1">
-                <a href="/account/login">LOG IN</a>
-                <a href="/account/register">SIGN UP</a>
-                <a href="index.php">HOME</a>
-                <a href="logout.php">LOGOUT</a>
-        </div>
-    </header>
+    <div class="navbar">
+        <a href="#">smth</a>
+        <a href="/account/login">LOG IN</a>
+        <a href="/account/register">SIGN UP</a>
+        <a href="index.php">HOME</a>
+    </div>
     <?php echo $content ?>
-  <div id="footer">mshvets &#169 2019</div>
+    <?php echo $content ?>
+
+    <div class="footer">
+        <h4>mshvets &#169 2019</h4>
+    </div>
 </body>
 </html>
