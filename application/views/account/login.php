@@ -1,7 +1,5 @@
-<script src="../script.js"></script>
-
 <h1>LOG IN</h1>
-<form>
+<form action = "/account/login" method="post">
     <div>
         <label>Login </label>
         <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
@@ -11,7 +9,6 @@
         <input type="password" placeholder="password" name="password"/>
     </div>
     <p>
-    <button onclick = "post_query()">REGISTER</button>
-    <button type="submit" name="submit" value="OK">REGISTER</button>
+    <button type="submit" name="enter" value="OK">REGISTER</button>
     </p>
 </form>

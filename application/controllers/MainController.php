@@ -7,10 +7,10 @@ use application\core\Controller;
 class MainController extends Controller {
 
     public function indexAction() {
-        $result = $this->model->getPhotos();
+        $result = $this->model->getUsers();
         //можно передавать данные в функцию рендера и потом через extract($$)
         $vars = [
-            'photos' => $result,
+            'login' => $result,
         ];
         $this->view->render('Main Page', $vars);
 //        $db = new Database();

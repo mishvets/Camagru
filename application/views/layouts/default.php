@@ -9,18 +9,17 @@
 <!--    <script-->
 <!--            src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">-->
 <!--    </script>-->
-    <script type="text/javascript" src="/js/jquery.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+<!--    <script type="text/javascript" src="/js/jquery.js"></script>-->
+<!--    <script type="text/javascript" src="/js/script.js"></script>-->
 </head>
 <body>
     <div class="navbar">
         <a href="#">smth</a>
         <a href="/account/login">LOG IN</a>
         <a href="/account/register">SIGN UP</a>
-        <a href="index.php">HOME</a>
+        <a href="/">HOME</a>
     </div>
     <?php echo $content ?>
-<!--    --><?php //echo $content ?>
 
     <div class="footer">
         <h4>mshvets &#169 2019</h4>

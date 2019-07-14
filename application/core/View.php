@@ -41,6 +41,10 @@ class View {
         exit;
     }
 
+//    public function message($status, $message) {
+//        exit(json_encode(['status' => $status, 'message' => $message]));
+//    }
+
     public function message($text) {
         echo "<script type='text/javascript'>alert('$text');</script>";
     }

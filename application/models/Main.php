@@ -6,8 +6,8 @@ use application\core\Model;
 
 class Main extends Model {
 
-    public function getPhotos() {
-        $result = $this->db->row('SELECT name, photos FROM users');
+    public function getUsers() {
+        $result = $this->db->row('SELECT * FROM users');
         return $result;
     }
 }
