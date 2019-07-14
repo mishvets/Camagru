@@ -4,7 +4,7 @@
         'all' => [
             'login',
             'register',
-            'recovery',
+            'reg',
         ],
         'authorize' => [
             //,

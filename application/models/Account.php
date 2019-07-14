@@ -8,7 +8,7 @@ class Account extends Model {
 
     public $data;
 
-    public function validate($input, $post) {
+    public function validate($post) {
         $this->data = [
             'email' => $this->test_input($post['email']),
             'login' => $this->test_input($post['login']),
@@ -44,6 +44,16 @@ class Account extends Model {
         $data = htmlspecialchars($data);
         return $data;
     }
+
+//    public function ajax_func($post) {
+//        $this->data = [
+//            'email' => $this->test_input($post['email']),
+//            'login' => $this->test_input($post['login']),
+//            'password' => $this->test_input($post['password']),
+//            'password_c' => $this->test_input($post['password_c']),
+//        ];
+//        echo json_encode($this->data);
+//    }
 
     public function getUsers($field, $val) {
 //        debug('SELECT id FROM users WHERE '.$field.' = :val');

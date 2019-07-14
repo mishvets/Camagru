@@ -1,5 +1,5 @@
 <h1>SIGN UP</h1>
-<form action = "/account/register" method="post">
+<form name="ajax_form">
     <div>
         <label>Login </label>
         <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
@@ -16,6 +16,6 @@
         <label>Password Confirmation</label>
         <input type="password" placeholder="password confirm" name="password_c"/>
     </div>
-    <p><button type="submit" name = "enter">Sign Up</button></p>
+    <p><button type="submit" id="btn" name = "enter">Sign Up</button></p>
 <!--    <button onclick = "post_query('test', 'login', 'login.email.password.password_c')">Sign Up</button>-->
-<!--</form>-->
+</form>
