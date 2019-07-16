@@ -36,7 +36,7 @@ class Router {
         // получаем имя экшена
         if (!empty($routes[2]))
         {
-            $action_name = $routes[2];
+            $action_name = strtok($routes[2], "?");
         }
 
         // добавляем префиксы

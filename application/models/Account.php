@@ -14,7 +14,7 @@ class Account extends Model {
             'login' => $this->test_input($post['login']),
             'password' => $this->test_input($post['password']),
             'password_c' => $this->test_input($post['password_c']),
-        ];
+            ];
         if (!filter_var($this->data['email'], FILTER_VALIDATE_EMAIL)){
             $this->error = 'Bad E-mail';
             return false;
@@ -55,10 +55,21 @@ class Account extends Model {
 //        echo json_encode($this->data);
 //    }
 
-    public function getUsers($field, $val) {
-//        debug('SELECT id FROM users WHERE '.$field.' = :val');
-        $result = $this->db->row('SELECT id FROM users WHERE '.$field.' = :val', ['val' => $val]);
-        return $result;
+//    public function getUsers($field, $val) {
+//        $result = $this->db->row('SELECT * FROM users WHERE '.$field.' = :val', ['val' => $val]);
+//        return $result;
+//    }
+
+    public function addUser($data) {
+        $this->data['password_c'] = bin2hex(random_bytes(32));
+        $data['password_c'] = $this->data['password_c'];
+        $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
+//        debug($data);
+        $this->db->query("INSERT INTO users(login, email, password, active_cod) VALUES (:login, :email, :password, :password_c)", $data);
     }
+
+//    public function updateUsers($field, $val) {
+//        $this->db->query('UPDATE users SET active=1 WHERE '.$field.' = :val', ['val' => $val]);
+//    }
 }
 ?>

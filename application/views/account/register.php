@@ -1,12 +1,14 @@
 <h1>SIGN UP</h1>
-<form name="ajax_form">
+<form name="ajax_form" id = "reg_form">
     <div>
         <label>Login </label>
-        <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
+<!--        <input type="text" placeholder="login" name="login" value="--><?php //if ($_POST) {echo $_POST['login'];}?><!--"/>-->
+        <input type="text" placeholder="login" name="login"/>
     </div>
     <div>
         <label>E-mail </label>
-        <input type="text" placeholder="email" name="email" value="<?php if ($_POST) {echo $_POST['email'];}?>"/>
+<!--        <input type="text" placeholder="email" name="email" value="--><?php //if ($_POST) {echo $_POST['email'];}?><!--"/>-->
+        <input type="text" placeholder="email" name="email"/>
     </div>
     <div>
         <label>Password </label>
