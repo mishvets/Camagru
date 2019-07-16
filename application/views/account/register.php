@@ -1,5 +1,5 @@
 <h1>SIGN UP</h1>
-<form name="ajax_form" id = "reg_form">
+<form name="ajax_form" id="reg_form">
     <div>
         <label>Login </label>
 <!--        <input type="text" placeholder="login" name="login" value="--><?php //if ($_POST) {echo $_POST['login'];}?><!--"/>-->

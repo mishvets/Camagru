@@ -1,14 +1,13 @@
 <h1>LOG IN</h1>
-<form action = "/account/login" method="post">
+<form name="ajax_form" id = "log_form">
     <div>
-        <label>Login </label>
-        <input type="text" placeholder="login" name="login" value="<?php if ($_POST) {echo $_POST['login'];}?>"/>
+        <label>E-Mail </label>
+        <input type="text" placeholder="login" name="email"/>
     </div>
     <div>
         <label>Password </label>
         <input type="password" placeholder="password" name="password"/>
     </div>
-    <p>
-    <button type="submit" name="enter" value="OK">REGISTER</button>
-    </p>
+    <a href="recovery">Forget your password?</a>
+    <p><button type="submit" id="btn" name = "enter">Sign Up</button></p>
 </form>

@@ -6,33 +6,18 @@ use application\core\Controller;
 
 class AccountController extends Controller {
 
-    public function loginAction() {
-        $this->view->render('Enter');
-
-//        echo json_encode($_POST);
-//
-//        if (!empty($_POST)) {
-//          if (!$this->model->validate($_POST)) {
-////                $this->view->message($this->model->error);
-//                echo ($this->model->error);
-//
-//            }
-//            else {
-//                $res = $this->model->getUsers('email', $this->model->data['email']);
-//                if (empty($res)) {
-//                    mail($this->model->data['email'], 'Registration Camagru', 'cool');
-////                    $this->view->message("Success. Check your mailbox.");
-//                    echo json_encode('Success. Check your mailbox.');
-//                }
-//                else {
-////                  message = "This email have been already used.";
-//                    echo json_encode("This email have been already used.");
-//                }
-//            }
-//        }
-////        else {
-////            echo json_encode($_POST);
-////        }
+    public function loginAction()
+    {
+        if (!isset($_POST['access'])) {
+            $this->view->render('Enter');
+        }
+        if (!empty($_POST)) {
+            if ($this->model->enter($_POST)) {
+                echo("OK");
+            } else {
+                echo($this->model->error);
+            }
+        }
     }
 
     public function registerAction() {
@@ -47,7 +32,7 @@ class AccountController extends Controller {
                 $res = $this->model->getUsers('email', $this->model->data['email']);
                 if (empty($res)) {
                     $this->model->addUser($this->model->data);
-                    mail($this->model->data['email'], 'Registration Camagru', "http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
+                    mail($this->model->data['email'], 'Recover password Camagru', "http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
                     echo (json_encode('Success. Check your mailbox.'));
                 }
                 else {
@@ -55,24 +40,21 @@ class AccountController extends Controller {
                 }
             }
         }
-
-//        if (!empty($_GET)) {
-//            $res = $this->model->getUsers('active_cod', $_GET['active_c']);
-//            if (!empty($res) && !$res[0]['active']) {
-//                $this->model->updateUsers('id', $res[0]['id']);
-//                $this->view->redirect("/main/index");
-//                $this->view->message("Success. You are active your account.");
-//            }
-//            else if (!empty($res) && $res[0]['active'] == 1) {
-////                $this->view->redirect("/main/index");
-//                $this->view->message("This account have been activated earlier.");
-//            }
-//        }
-
     }
 
     public function recoveryAction() {
-        $this->view->render('Recovery page');
+        if (!isset($_POST['access'])) {
+            $this->view->render('Recovery page');
+        }
+        if (!empty($_POST)) {
+            if (!($res = $this->model->recov($_POST))) {
+                echo ($this->model->error);
+            }
+            else {
+                mail($this->model->data['email'], 'Registration Camagru', "Hi ".$res[0]['login'].". Reset your password, and we'll get you on your way. To change your Camagry password, click the link below: http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
+                echo (json_encode('Success. Check your mailbox.'));
+            }
+        }
 
     }
 }
