@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
 <!--    A viewport meta tag should make the web site work on all devices and screen resolutions:-->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
     <link rel="stylesheet" href="/css/style.css">
     <title> <?php echo $title ?></title>
 <!--    <script-->
@@ -14,16 +17,17 @@
     <script type="text/javascript" src="/js/script.js"></script>
 </head>
 <body>
-    <div class="navbar">
+<!--    <nav class="navbar sticky-top navbar-dark bg-dark">-->
+    <nav class="navbar">
         <a href="#">smth</a>
         <a href="/account/login">LOG IN</a>
         <a href="/account/register">SIGN UP</a>
         <a href="/">HOME</a>
-    </div>
+    </nav>
     <?php echo $content ?>
 
     <div class="footer">
-        <h4>mshvets &#169 2019</h4>
+        <h6>mshvets &#169 2019</h6>
     </div>
 </body>
 </html>

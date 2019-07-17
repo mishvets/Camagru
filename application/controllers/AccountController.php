@@ -32,7 +32,7 @@ class AccountController extends Controller {
                 $res = $this->model->getUsers('email', $this->model->data['email']);
                 if (empty($res)) {
                     $this->model->addUser($this->model->data);
-                    mail($this->model->data['email'], 'Recover password Camagru', "http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
+                    mail($this->model->data['email'], 'Registration Camagru', "http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
                     echo (json_encode('Success. Check your mailbox.'));
                 }
                 else {
@@ -51,7 +51,17 @@ class AccountController extends Controller {
                 echo ($this->model->error);
             }
             else {
-                mail($this->model->data['email'], 'Registration Camagru', "Hi ".$res[0]['login'].". Reset your password, and we'll get you on your way. To change your Camagry password, click the link below: http://localhost:8100/main/index?active_c=".$this->model->data['password_c']);
+                $val = [
+                    'set_val' => $this->model->data['password_c'],
+                    'where_val' => $res[0]['id'],
+                ];
+                $this->model->updateUsers('code', 'id', $val);
+                $val = [
+                    'set_val' => $this->model->data['password'],
+                    'where_val' => $res[0]['id'],
+                ];
+                $this->model->updateUsers('password_r', 'id', $val);
+                mail($this->model->data['email'], 'Recover password Camagru', "Hi ".$res[0]['login'].". Reset your password, and we'll get you on your way. To change your Camagry password, click the link below: http://localhost:8100/main/index?recover=".$this->model->data['password_c']);
                 echo (json_encode('Success. Check your mailbox.'));
             }
         }

@@ -114,7 +114,7 @@ class Account extends Model {
         $data['password_c'] = $this->data['password_c'];
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
 //        debug($data);
-        $this->db->query("INSERT INTO users(login, email, password, active_cod) VALUES (:login, :email, :password, :password_c)", $data);
+        $this->db->query("INSERT INTO users(login, email, password, code) VALUES (:login, :email, :password, :password_c)", $data);
     }
 
 //    public function updateUsers($field, $val) {

@@ -19,7 +19,8 @@ abstract class Model {
         return $result;
     }
 
-    public function updateUsers($field, $val) {
-        $this->db->query('UPDATE users SET active=1 WHERE '.$field.' = :val', ['val' => $val]);
+    public function updateUsers($set_field, $where_field, $val) {
+//        $this->db->query('UPDATE users SET '.$set_field.'='.$set_val.' WHERE '.$where_field.' = :val', ['val' => $where_val]);
+        $this->db->query('UPDATE users SET '.$set_field.' = :set_val WHERE '.$where_field.' = :where_val', $val);
     }
 }
