@@ -94,19 +94,16 @@ class Account extends Model {
         return $data;
     }
 
-//    public function ajax_func($post) {
-//        $this->data = [
-//            'email' => $this->test_input($post['email']),
-//            'login' => $this->test_input($post['login']),
-//            'password' => $this->test_input($post['password']),
-//            'password_c' => $this->test_input($post['password_c']),
-//        ];
-//        echo json_encode($this->data);
-//    }
-
-//    public function getUsers($field, $val) {
-//        $result = $this->db->row('SELECT * FROM users WHERE '.$field.' = :val', ['val' => $val]);
-//        return $result;
+//    public function sendMail($to, ){
+//        $to=$this->model->data['email'];
+//        $subject="Recover password Camagru";
+////                $from = 'info@phpgang.com';
+//        $body="Hi, ".$res[0]['login']." <br><br>Click here to reset your password: <br><br>http://localhost:8100/main/index?recover=".$this->model->data['password_c']."   <br/> <br/>--<br>PHPGang.com<br>Solve your problems.";
+////                $headers = "From: " . strip_tags($from) . "\r\n";
+////                $headers .= "Reply-To: ". strip_tags($from) . "\r\n";
+//        $headers = "MIME-Version: 1.0\r\n";
+//        $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+//        mail($to,$subject,$body,$headers);
 //    }
 
     public function addUser($data) {
