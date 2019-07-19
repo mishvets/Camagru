@@ -3,10 +3,12 @@
 <head>
     <meta charset="UTF-8">
 <!--    A viewport meta tag should make the web site work on all devices and screen resolutions:-->
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
     <link rel="shortcut icon" href="/images/letter-c-32.ico" type="image/x-icon">
     <title> <?php echo $title ?></title>
 <!--    <script-->
@@ -18,16 +20,21 @@
 </head>
 <body>
 <!--    <nav class="navbar sticky-top navbar-dark bg-dark">-->
-    <nav class="navbar sticky-top navbar-dark">
-        <a href="/photo/creation">smth</a>
-        <a href="/account/login">LOG IN</a>
-        <a href="/account/register">SIGN UP</a>
-        <a href="/">HOME</a>
-    </nav>
+    <header>
+        <nav class="navbar navbar-fixed-top">
+            <a class="pull-right" href="/photo/creation">smth</a>
+            <a class="pull-right" href="/account/login">LOG IN</a>
+            <a class="pull-right" href="/account/register">SIGN UP</a>
+            <a class="brand" id="logo" href="/">
+                <img src="/images/logo_200x200.png" width="100">
+            </a>
+        </nav>
+    </header>
+
     <?php echo $content ?>
 
-    <div class="footer">
-        <h6>mshvets &#169 2019</h6>
-    </div>
+    <footer class="container">
+        <p class="pull-right">&#169 mshvets 2019</p>
+    </footer>
 </body>
 </html>

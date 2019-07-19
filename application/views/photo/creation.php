@@ -1,18 +1,31 @@
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span2">
+            <button class="btn btn-info" id="camera">New Photo</button>
+            <button class="btn btn-info" id="snap">Snap Photo</button>
+            <button class="btn btn-info" id="add">Add</button>
+        </div>
+        <div class="span10">
+<!--            <div id="content">-->
+<!--                <video id="video" width="640" height="480" autoplay></video>-->
+<!--            </div>-->
+<!--            <img id="logo" width="220" height="277" src="/images/letter-c-32.ico" alt="The Logo">-->
+<!--            <div id="second_div">-->
+<!--                <canvas id="canvas" width="640" height="480">Your browser does not support the HTML5 canvas tag.</canvas>-->
+<!--            </div>-->
+            <div id ="content" style="position:relative">
+                <video id="video" width="640" height="480" autoplay style=""></video>
+                <div id = 'image'>
 
-<!--
-	Ideally these elements aren't created until it's confirmed that the
-	client supports video/camera, but for the sake of illustrating the
-	elements involved, they are created with markup (not JavaScript)
--->
-<div class = "content">
-    <video id="video" width="640" height="480" autoplay></video>
-    <img id="logo" width="220" height="277" src="/images/letter-c-32.ico" alt="The Logo">
-    <div id="second_div">
+                </div>
+            </div>
 
+        </div>
     </div>
-    <button id="snap">Snap Photo</button>
-    <button id="new_btn">Add</button>
 </div>
+
+
+
 <script>
     // Grab elements, create settings, etc.
     var video = document.getElementById('video');
@@ -60,10 +73,14 @@
 
 
     // var btnPhoto = document.getElementById("new_btn");
-    document.getElementById("new_btn").addEventListener("click", function() {
+    document.getElementById("add").addEventListener("click", function() {
         var c = document.getElementById("canvas");
         var ctx = c.getContext("2d");
         var img = document.getElementById("logo");
         ctx.drawImage(img, 10, 10, 150, 180);
+    });
+
+    document.getElementById("camera").addEventListener("click", function() {
+        document.getElementById("image").innerHTML = '<img id="picture" width="220" height="277" src="/images/letter-c-32.ico" style="position: absolute; top: 0;" alt="The Logo">';
     });
 </script>

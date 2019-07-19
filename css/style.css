@@ -8,25 +8,26 @@ body {
     background: linear-gradient(45deg, #0FD298, #34C0E2);
     font-family: Helvetica,Arial,sans-serif;
     background-attachment: fixed;
+    padding-top: 60px;
+
 }
 
 .navbar {
-    margin: 0;
-    padding: 0;
-    top:0;
-    left:0;
+/*    margin: 0;*/
+/*    padding: 0;*/
+/*    top:0;*/
+/*    left:0;*/
     display: block;
-    overflow: hidden;
+/*    overflow: hidden;*/
     background-color: #333;
-    position: sticky;
-    position: -webkit-sticky;
+/*    position: sticky;*/
+/*    position: -webkit-sticky;*/
 }
 
 .navbar a {
     color: white;
     display: block;
     padding: 14px 20px;
-    float: right;
     text-decoration: none;
 }
 
@@ -40,14 +41,19 @@ body {
     color: black;
 }
 
+#logo{
+    margin: 0;
+    background-color: #333;
+}
+
 button {
-    background: aquamarine;
-    color: cornflowerblue;
+    /*background: aquamarine;*/
+    /*color: cornflowerblue;*/
     font-weight: bold;
-    text-align: center;
-    border: 1px solid #34C0E2;
-    padding: 8px;
-    border-radius: 8px;
+    /*text-align: center;*/
+    /*border: 1px solid #34C0E2;*/
+    /*padding: 8px;*/
+    /*border-radius: 8px;*/
 }
 
 button:hover {
@@ -55,7 +61,7 @@ button:hover {
     opacity: 0.8;
 }
 
-input {
+.form-horizontal input {
     padding: 8px;
     border: 1px solid #34C0E2;
     border-radius: 8px;
@@ -65,11 +71,9 @@ input {
 
 .form-horizontal {
     background: lightcyan;
-    padding-bottom: 40px;
-    border-radius: 15px;
+    padding-bottom: 10px;
+    border-radius: 10px;
     text-align: center;
-    border: #66696a;
-    border-radius: 4px;
 }
 
 .form-horizontal .heading{
@@ -106,10 +110,7 @@ input {
     transition: all 0.5s ease 0s;
 }
 
-.container {
-    width: auto;
-    padding: 10%;
-}
+
 /*div {*/
 /*    border: 0;*/
 /*    font: inherit;*/
@@ -129,9 +130,22 @@ label {
 }
 
 .footer {
-    position: sticky;
-    bottom: 0;
+    float: right;
+    /*position: sticky;*/
+    /*bottom: 0;*/
 }
+
+/*.pull-left {*/
+/*    float: left;*/
+/*}*/
+
+/*.pull-right {*/
+/*    float: right;*/
+/*}*/
+
+/*.muted {*/
+/*    color: #999;*/
+/*}*/
 
 /** {*/
 /*    box-sizing: border-box;*/
