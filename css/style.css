@@ -142,17 +142,28 @@ label {
     /*bottom: 0;*/
 }
 
-/*.pull-left {*/
-/*    float: left;*/
-/*}*/
 
-/*.pull-right {*/
-/*    float: right;*/
-/*}*/
+#sticker_gallery {
+    background-color: #bce8f1;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
 
-/*.muted {*/
-/*    color: #999;*/
-/*}*/
+}
+
+.sticker {
+    border-width: 5px;
+    display: inline-block;
+}
+
+.sticker:hover {
+    cursor: pointer;
+    /*opacity: 0.8;*/
+}
+
+.sticker:active {
+    opacity: 0.8;
+}
 
 /** {*/
 /*    box-sizing: border-box;*/

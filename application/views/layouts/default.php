@@ -8,7 +8,7 @@
 <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/bootstrap-responsive.css">
+<!--    <link rel="stylesheet" href="/css/bootstrap-responsive.css">-->
     <link rel="shortcut icon" href="/images/letter-c-32.ico" type="image/x-icon">
     <title> <?php echo $title ?></title>
 <!--    <script-->
@@ -22,15 +22,12 @@
 <!--    <nav class="navbar sticky-top navbar-dark bg-dark">-->
     <header>
         <nav class="navbar navbar-fixed-top">
-
-            <a class="brand" id="logo" href="/">
+            <a class="pull-right" href="/photo/creation">smth</a>
+            <a class="pull-right" href="/account/login">LOG IN</a>
+            <a class="pull-right" href="/account/register">SIGN UP</a>
+            <a class="navbar-brand" id="logo" href="/">
                 <img src="/images/logo_200x200.png" width="100">
             </a>
-<!--            <div>-->
-                <a class="pull-right" href="/photo/creation">smth</a>
-                <a class="pull-right" href="/account/login">LOG IN</a>
-                <a class="pull-right" href="/account/register">SIGN UP</a>
-<!--            </div>-->
         </nav>
 <!--        <nav class="navbar navbar-expand navbar-fixed-top">-->
 <!--            <ul class="nav nav-pills">-->

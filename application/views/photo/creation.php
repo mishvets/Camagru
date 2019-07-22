@@ -1,11 +1,27 @@
-<div class="container-fluid">
-    <div class="row-fluid">
-        <div class="span2">
-            <button class="btn btn-info" id="camera">New Photo</button>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <button class="btn btn-info disabled" id="camera">New Photo</button>
             <button class="btn btn-info" id="snap">Snap Photo</button>
             <button class="btn btn-info" id="add">Add</button>
+            <div id="sticker_gallery">
+                <?php
+                $dir ='./images/'; // сохраним в переменную путь к нашей папке
+//                debug(is_dir($dir));
+                if(is_dir($dir)&&file_exists($dir)){ // проверим существует ли данный каталог и каталог ли это
+                    $images=scandir($dir); //если все ок, то получаем список файлов из каталога.
+                    for($i=3; $i < count($images);$i++){ //запускаем перебор массива в цикле
+                        $image=$dir.$images[$i]; // получаем в переменную путь к файлу
+//                        debug(substr($image, 1));
+                        if(exif_imagetype($image)){ // проверяем является ли файл картинкой
+                            echo '<figure class = "stikcer_figure"><img class="sticker" onclick = "chooseSticker(this)" src="'.substr($image, 1).'"width="100"></figure>'; // выводим картинку
+                        }
+                    }
+                }
+                ?>
+            </div>
         </div>
-        <div class="span10">
+        <div class="col-md-8">
 <!--            <div id="content">-->
 <!--                <video id="video" width="640" height="480" autoplay></video>-->
 <!--            </div>-->
@@ -14,7 +30,7 @@
 <!--                <canvas id="canvas" width="640" height="480">Your browser does not support the HTML5 canvas tag.</canvas>-->
 <!--            </div>-->
             <div id ="content" style="position:relative">
-                <video id="video" width="640" height="480" autoplay style=""></video>
+                <video id="video"  autoplay></video>
                 <div id = 'image'>
 
                 </div>
@@ -62,6 +78,22 @@
     // Elements for taking the snapshot
     // var canvas = document.getElementById('canvas');
     // var context = canvas.getContext('2d');
+
+    function chooseSticker(sticker) {
+        var allStickers = document.getElementsByClassName("sticker");
+        console.log(sticker.src);
+        for (var i = 0; i < allStickers.length; i++) {
+            allStickers[i].style.opacity = 1;
+        }
+
+        if (sticker.style.opacity != 0.8) {
+            sticker.style.opacity = 0.8;
+        }
+        else {
+            sticker.style.opacity = 1;
+        }
+        document.getElementById("image").innerHTML = '<img id="picture" width="200" src="'+sticker.src+'" style="position: absolute; top: 0;" alt="The Logo">';
+    }
 
     // Trigger photo take
     document.getElementById("snap").addEventListener("click", function() {
