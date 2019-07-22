@@ -22,13 +22,34 @@
 <!--    <nav class="navbar sticky-top navbar-dark bg-dark">-->
     <header>
         <nav class="navbar navbar-fixed-top">
-            <a class="pull-right" href="/photo/creation">smth</a>
-            <a class="pull-right" href="/account/login">LOG IN</a>
-            <a class="pull-right" href="/account/register">SIGN UP</a>
+
             <a class="brand" id="logo" href="/">
                 <img src="/images/logo_200x200.png" width="100">
             </a>
+<!--            <div>-->
+                <a class="pull-right" href="/photo/creation">smth</a>
+                <a class="pull-right" href="/account/login">LOG IN</a>
+                <a class="pull-right" href="/account/register">SIGN UP</a>
+<!--            </div>-->
         </nav>
+<!--        <nav class="navbar navbar-expand navbar-fixed-top">-->
+<!--            <ul class="nav nav-pills">-->
+<!--                <li>-->
+<!--                    <a class="brand" href="/">-->
+<!--                        <img src="/images/logo_200x200.png" width="100">-->
+<!--                    </a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a class="pull-right" href="/account/login">LOG IN</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a class="pull-right" href="/account/register">SIGN UP</a>-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                    <a class="pull-right" href="/photo/creation">smth</a>-->
+<!--                </li>-->
+<!--            </ul>-->
+<!--        </nav>-->
     </header>
 
     <?php echo $content ?>
