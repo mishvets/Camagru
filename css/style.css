@@ -145,15 +145,16 @@ label {
 
 #sticker_gallery {
     background-color: #bce8f1;
-    border-radius: 5px;
-    padding: 5px;
-    margin: 10px;
-
+    /*border-radius-: 5px;*/
+    /*padding: 5px;*/
+    margin-top: 10px;
+    height: 400px;
+    overflow: auto
 }
 
 .sticker {
-    border-width: 5px;
-    display: inline-block;
+    /*border-width: 5px;*/
+    /*display: inline-block;*/
 }
 
 .sticker:hover {
