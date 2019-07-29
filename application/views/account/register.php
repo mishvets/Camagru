@@ -22,3 +22,4 @@
         </div>
     </form>
 </div>
+<script type="text/javascript" src="/js/ajax_form.js"></script>

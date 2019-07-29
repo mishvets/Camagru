@@ -9,14 +9,13 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 <!--    <link rel="stylesheet" href="/css/bootstrap-responsive.css">-->
-    <link rel="shortcut icon" href="/images/letter-c-32.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/stickers/letter-c-32.ico" type="image/x-icon">
     <title> <?php echo $title ?></title>
 <!--    <script-->
 <!--            src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">-->
 <!--    </script>-->
-<!--    <script type="text/javascript" src="/js/jquery.js"></script>-->
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
+    <script type="text/javascript" src="/js/jquery.js"></script>
+<!--    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
 </head>
 <body>
 <!--    <nav class="navbar sticky-top navbar-dark bg-dark">-->

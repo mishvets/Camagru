@@ -3,20 +3,11 @@ $( document ).ready(function() {
     form.addEventListener('submit', function(event) {
         event.preventDefault();
 
-        // let form = document.querySelector("#form");
-        // console.log(form.children[0].children[0]);
-
         // создать объект для формы
-        // var formData = new FormData(document.querySelector("#reg_form"));
         var formData = new FormData(form);
-
-        // var formData = new FormData();
-        // var formData = 'login=misha&email=19mch97@gmail.com&password=qweQWE1&password_c=qweQWE1';
 
         // добавить к пересылке ещё пару ключ - значение
         formData.append("access", "1");
-        // formData.append("name", "Aefrj");
-        // console.log(formData);
 
         // отослать
         var httpRequest;
@@ -50,11 +41,8 @@ $( document ).ready(function() {
                 }
             };
 
-        // httpRequest.open("POST", "/account/register", true);
         httpRequest.open("POST", document.URL, true);
-            // httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         // httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-            // httpRequest.send(formData);
-            httpRequest.send(formData);
+        httpRequest.send(formData);
     });
 });

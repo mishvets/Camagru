@@ -10,10 +10,11 @@
                     <input type="password" placeholder="Password" name="password"/>
                 </div>
                 <div class="form-group">
-                    <a href="recovery">Forget your password?</a>
+                    <a href="recovery">Forgot your password?</a>
                 </div>
                 <div class="controls">
-                    <p><button class ="btn btn-primary" type="submit" id="btn" name = "enter">Sign In</button></p>
+                    <p><button class ="btn btn-primary" type="submit" id="btn" name = "enter">Log In</button></p>
                 </div>
             </form>
 </div>
+<script type="text/javascript" src="/js/ajax_form.js"></script>
