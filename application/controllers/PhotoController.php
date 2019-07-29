@@ -17,17 +17,21 @@ class PhotoController extends Controller {
             list($type, $data) = explode(';', $_POST['data']);
             list(, $data) = explode(',', $data);
             $data = base64_decode($data);
+            $img1 = imagecreatefromstring($data);
 
             list(,$sticker) = explode('images/stickers/', $_POST['sticker']);
-//            file_put_contents('images/results/image.png', $data);
-//            debug($sticker);
-            $img2 = imagecreatefrompng('images/stickers/'.$sticker);
-            $img1 = imagecreatefromstring($data);
-//
-//// Копирование
-//            imagecopy($dest, $src, 0, 0, 20, 13, 80, 40);
-//
-//            if($img1 && $img2) {
+            list(,$type_sticker) = explode('.', $sticker);
+            if ($type_sticker === 'png') {
+                $img2 = imagecreatefrompng('images/stickers/'.$sticker);
+            }
+            elseif ($type_sticker === 'gif') {
+                $img2 = imagecreatefromgif('images/stickers/'.$sticker);
+            }
+            else {
+                echo 'Please, choose another sticker';
+                return false;
+            }
+            if($img1 && $img2) {
                 // Высота и ширина меньшей картинки
                 $x2 = imagesx($img2);
                 $y2 = imagesy($img2);
@@ -52,12 +56,15 @@ class PhotoController extends Controller {
                     // исходной картинки
                     $x2, $y2
                 );
+            }
 //// Вывод и освобождение памяти
 //            header('Content-Type: image/png');
-            imagepng($img1, 'images/results/image.png');
+            imagepng($img1, 'images/results/image'.uniqid().'.png');
 //          file_put_contents('images/results/image.png', $dest);
             imagedestroy($img1);
             imagedestroy($img2);
+            echo "Done!";
+            return true;
         }
     }
 
