@@ -110,7 +110,6 @@ class Account extends Model {
         $this->data['password_c'] = bin2hex(random_bytes(32));
         $data['password_c'] = $this->data['password_c'];
         $data['password'] = password_hash($data['password'], PASSWORD_DEFAULT);
-//        debug($data);
         $this->db->query("INSERT INTO users(login, email, password, code) VALUES (:login, :email, :password, :password_c)", $data);
     }
 
