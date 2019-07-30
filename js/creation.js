@@ -39,7 +39,7 @@ function chooseSticker(sticker) {
     else {
         sticker.style.opacity = 1;
     }
-    document.getElementById("image").innerHTML = '<img id="picture" width="200" src="'+sticker.src+'" style="position: absolute; top: 0;" alt="The Logo">';
+    document.getElementById("image").innerHTML = '<img id="picture" width="25%" src="'+sticker.src+'" style="position: absolute; top: 0;" alt="The Logo">';
 }
 
 // // Elements for taking the snapshot

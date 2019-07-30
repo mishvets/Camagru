@@ -1,13 +1,18 @@
 <div class="container">
     <div class="row">
         <div class="col-md-4">
-            <form action="file-handler.php" method="post" enctype="multipart/form-data">
-                <div class="form-group">
-                    <input type="file" id="exampleInputFile">
-                </div>
+<!--            <form action="/photo/creation" method="post" enctype="multipart/form-data">-->
+<!--                <div class="form-group">-->
+<!--                    <input type="file" id="exampleInputFile">-->
+<!--                    <button>Загрузить</button>-->
+<!--                </div>-->
+<!--            </form>-->
+            <form action="/photo/creation" method="post" enctype="multipart/form-data">
+                <input type="file" name="upload">
+                <button>Загрузить</button>
             </form>
             <button class="btn btn-info" id="camera">
-                <img src="https://img.icons8.com/ios/50/000000/camera.png" height="18px">
+                <img src="/images/icons/camera.png" height="26px">
             </button>
             <button class="btn btn-info disabled" id="create">Create</button>
             <a id="dl-btn" href="#" download="glorious_selfie.png">Save Photo</a>
@@ -19,9 +24,8 @@
                     $images=scandir($dir); //если все ок, то получаем список файлов из каталога.
                     for($i=3; $i < count($images);$i++){ //запускаем перебор массива в цикле
                         $image=$dir.$images[$i]; // получаем в переменную путь к файлу
-//                        debug(substr($image, 1));
                         if(exif_imagetype($image)){ // проверяем является ли файл картинкой
-                            echo '<figure class = "col-xs-6 stikcer_figure"><img class="sticker" onclick = "chooseSticker(this)" src="'.substr($image, 1).'"height="100"></figure>'; // выводим картинку
+                            echo '<figure class = "col-xs-6 sticker_figure"><img class="sticker" onclick = "chooseSticker(this)" src="'.substr($image, 1).'"height="100"></figure>'; // выводим картинку
                         }
                     }
                 }
@@ -36,8 +40,8 @@
 <!--            <div id="second_div">-->
 <!--                <canvas id="canvas" width="640" height="480">Your browser does not support the HTML5 canvas tag.</canvas>-->
 <!--            </div>-->
-            <div id ="content" style="position:relative">
-                <video id="video"  autoplay></video>
+            <div id ="content">
+                <video id="video"  width = "100%" autoplay></video>
                 <div id = 'image'>
 
                 </div>

@@ -10,62 +10,31 @@ class PhotoController extends Controller {
         if (!isset($_POST['access'])) {
             $this->view->render('Create Photo');
         }
-        if (!empty($_POST)) {
-//            var_dump($_POST);
-//            $data = $_POST['data'];
-
-            list($type, $data) = explode(';', $_POST['data']);
-            list(, $data) = explode(',', $data);
-            $data = base64_decode($data);
-            $img1 = imagecreatefromstring($data);
-
-            list(,$sticker) = explode('images/stickers/', $_POST['sticker']);
-            list(,$type_sticker) = explode('.', $sticker);
-            if ($type_sticker === 'png') {
-                $img2 = imagecreatefrompng('images/stickers/'.$sticker);
-            }
-            elseif ($type_sticker === 'gif') {
-                $img2 = imagecreatefromgif('images/stickers/'.$sticker);
+        else if (!empty($_POST)) {
+            if($this->model->createImg($_POST)) {
+                echo "Done!";
+                //ввод в БД;
             }
             else {
-                echo 'Please, choose another sticker';
-                return false;
+                echo ($this->model->error);
             }
-            if($img1 && $img2) {
-                // Высота и ширина меньшей картинки
-                $x2 = imagesx($img2);
-                $y2 = imagesy($img2);
-                // Копируем маленькую картинку поверх большой с заданным смещением
-                imagecopyresampled(
-                // Указатели на изображения, куда и откуда нужно скопировать картинку
-                    $img1, $img2,
-                    // Координаты точки большей картинки, куда поместить левый верхний угол
-                    // копируемой картинки
-                    20, 20,
-                    // Координаты точки на копируемой (маленькой) картинке, начиная с которой
-                    // нужно копировать (левый верхний угол). Мы копируем всю картинку, по
-                    // этому тут нули
-                    0, 0,
-                    // Ширина и высота, которые должна получить копируемая картинка после
-                    // копирования. Мы копируем картинку без искажения её исходных размеров,
-                    // по этому тут ширина и высота исходной картинки
-                    $x2, $y2,
-                    // Ширина и высота маленькой картинки (по сути - размеры прямоугольной
-                    // области на маленькой картинке, из которой нужно скопировать пиксели
-                    // на большую). Мы копируем всю картинку, по этому тут ширина и высота
-                    // исходной картинки
-                    $x2, $y2
-                );
-            }
-//// Вывод и освобождение памяти
-//            header('Content-Type: image/png');
-            imagepng($img1, 'images/results/image'.uniqid().'.png');
-//          file_put_contents('images/results/image.png', $dest);
-            imagedestroy($img1);
-            imagedestroy($img2);
-            echo "Done!";
-            return true;
         }
-    }
+//        if (!empty($_FILE)) {
+            echo "OK";
+//            debug($_FILES);
+            if ($this->model->uploadPhoto($_FILES)) {
+                echo $_FILES['upload']['tmp_name'];
+                //ввод в БД;
+            } else {
+                echo($this->model->error);
+            }
+        }
+//    }
 
 }
+
+
+//label, который привязан к input.
+//потом идет проверка x.addElementListener('change', function)
+//если там что-то поменялось, то вытягиваем файл getElemById('x').files[0]
+//и потом через сорс выводим

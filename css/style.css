@@ -166,6 +166,18 @@ label {
     opacity: 0.8;
 }
 
+.sticker_figure {
+    margin: 1% auto;
+    padding: 0 auto;
+}
+
+#content {
+    position: relative;
+}
+
+button#camera.btn.btn-info {
+    padding: 3px 5px;
+}
 /** {*/
 /*    box-sizing: border-box;*/
 /*}*/

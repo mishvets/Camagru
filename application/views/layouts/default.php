@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="/css/bootstrap.css">
     <link rel="stylesheet" href="/css/style.css">
 <!--    <link rel="stylesheet" href="/css/bootstrap-responsive.css">-->
-    <link rel="shortcut icon" href="/images/stickers/letter-c-32.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/images/icons/letter-c-32.ico" type="image/x-icon">
     <title> <?php echo $title ?></title>
 <!--    <script-->
 <!--            src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous">-->
