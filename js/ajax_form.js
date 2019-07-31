@@ -28,7 +28,7 @@ $( document ).ready(function() {
                     // все в порядке, ответ получен
                     if (httpRequest.status == 200) {
                         // великолепно!
-                        alert(httpRequest.responseText);
+                        alert(JSON.parse(httpRequest.responseText));
                     } else {
                         // с запросом возникли проблемы,
                         // например, ответ может быть 404 (Не найдено)

@@ -7,15 +7,15 @@
 <!--                    <button>Загрузить</button>-->
 <!--                </div>-->
 <!--            </form>-->
-            <form action="/photo/creation" method="post" enctype="multipart/form-data">
-                <input type="file" name="upload">
-                <button>Загрузить</button>
+            <form action="/photo/creation" name="photo_form" enctype="multipart/form-data">
+                <input type="file" name="upload" id="uploadPhoto">
             </form>
-            <button class="btn btn-info" id="camera">
+            <button class="btn btn-info" id="cameraBtn">
                 <img src="/images/icons/camera.png" height="26px">
             </button>
+            <button class="btn btn-info" id="uploadBtn">Upload...</button>
             <button class="btn btn-info disabled" id="create">Create</button>
-            <a id="dl-btn" href="#" download="glorious_selfie.png">Save Photo</a>
+<!--            <a id="dl-btn" href="#" download="glorious_selfie.png">Save Photo</a>-->
             <div class="row" id="sticker_gallery">
                 <?php
                 $dir ='./images/stickers/'; // сохраним в переменную путь к нашей папке
@@ -41,7 +41,10 @@
 <!--                <canvas id="canvas" width="640" height="480">Your browser does not support the HTML5 canvas tag.</canvas>-->
 <!--            </div>-->
             <div id ="content">
-                <video id="video"  width = "100%" autoplay></video>
+                <div>
+                    <img id="user" src="">
+                    <video id="video" width = "100%" autoplay></video>
+                </div>
                 <div id = 'image'>
 
                 </div>

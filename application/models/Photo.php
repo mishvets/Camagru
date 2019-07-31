@@ -12,7 +12,8 @@ class Photo extends Model {
         $data = base64_decode($data);
         $img1 = imagecreatefromstring($data);
 
-        list(,$sticker) = explode('images/stickers/', $post['sticker']);
+        list($sticker, $sticker_w, $sticker_h) = explode(',', $post['sticker']);
+        list(,$sticker) = explode('images/stickers/', $sticker);
         list(,$type_sticker) = explode('.', $sticker);
         if ($type_sticker === 'png') {
             $img2 = imagecreatefrompng('images/stickers/'.$sticker);
@@ -33,6 +34,7 @@ class Photo extends Model {
             $x2 = imagesx($img2);
             $y2 = imagesy($img2);
             // Копируем маленькую картинку поверх большой с заданным смещением
+//            echo (json_encode($sticker_w));
             imagecopyresampled(
             // Указатели на изображения, куда и откуда нужно скопировать картинку
                 $img1, $img2,
@@ -45,7 +47,8 @@ class Photo extends Model {
                 0, 0,
                 // Нужно сохранить пропорции. Так как высота стикера это 25% от большой, то
                 // пропорционально рассчитываем y
-                $x1*0.25, $x1*0.25*$y2/$x2,
+//                $x1*0.25, $x1*0.25*$y2/$x2,
+                $sticker_w, $sticker_h,
                 // Ширина и высота маленькой картинки (по сути - размеры прямоугольной
                 // области на маленькой картинке, из которой нужно скопировать пиксели
                 // на большую). Мы копируем всю картинку, по этому тут ширина и высота

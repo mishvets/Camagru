@@ -175,8 +175,16 @@ label {
     position: relative;
 }
 
-button#camera.btn.btn-info {
+button#cameraBtn.btn.btn-info {
     padding: 3px 5px;
+}
+
+#uploadPhoto {
+    display:none;
+}
+
+#canvas {
+    display: none;
 }
 /** {*/
 /*    box-sizing: border-box;*/

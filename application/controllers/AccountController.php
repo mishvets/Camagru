@@ -13,9 +13,9 @@ class AccountController extends Controller {
         }
         if (!empty($_POST)) {
             if ($this->model->enter($_POST)) {
-                echo("OK");
+                echo(json_encode("OK"));
             } else {
-                echo($this->model->error);
+                echo(json_encode($this->model->error));
             }
         }
     }
@@ -26,7 +26,7 @@ class AccountController extends Controller {
         }
         if (!empty($_POST)) {
             if (!$this->model->validate($_POST)) {
-                echo ($this->model->error);
+                echo (json_encode($this->model->error));
             }
             else {
                 $res = $this->model->getUsers('email', $this->model->data['email']);
@@ -43,7 +43,7 @@ class AccountController extends Controller {
                     echo (json_encode('Success. Check your mailbox.'));
                 }
                 else {
-                    echo json_encode('This email have been already used.');
+                    echo (json_encode('This email have been already used.'));
                 }
             }
         }
