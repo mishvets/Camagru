@@ -16,7 +16,13 @@ class Account extends Model {
         $res = $this->getUsers('email', $this->data['email']);
         if (!empty($res)) {
             if (password_verify($this->data['password'], $res[0]['password'])) {
-                return true;
+                if ($res[0]["active"]) {
+                    return true;
+                }
+                else {
+                    $this->error = 'Please, firstly activate your account.';
+                    return false;
+                }
             }
             else {
                 $this->error = 'Not correct password.';
